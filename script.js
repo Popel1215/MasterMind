@@ -31,7 +31,7 @@ function guess(event) {
   // Erste Stelle
   if (v1 === Number1) {
     New.innerHTML += '🟢 ' + v1;
-  } else if (v1 === Number2 || v1 === Number3) {
+  } else if (v1 === Number2 || v1 === Number3 || v1 === Number4) {
     New.innerHTML += '🟡 ' + v1;
   } else {
     New.innerHTML += '🔴 ' + v1;
@@ -40,7 +40,7 @@ function guess(event) {
   // Zweite Stelle
   if (v2 === Number2) {
     New.innerHTML += '🟢 ' + v2;
-  } else if (v2 === Number1 || v2 === Number3) {
+  } else if (v2 === Number1 || v2 === Number3 || v2 === Number4) {
     New.innerHTML += '🟡 ' + v2;
   } else {
     New.innerHTML += '🔴 ' + v2;
@@ -49,7 +49,7 @@ function guess(event) {
   // Dritte Stelle
   if (v3 === Number3) {
     New.innerHTML += '🟢 ' + v3 ;
-  } else if (v3 === Number1 || v3 === Number2) {
+  } else if (v3 === Number1 || v3 === Number2 || v3 === Number4) {
     New.innerHTML += '🟡 ' + v3 ;
   } else {
     New.innerHTML += '🔴 ' + v3 ;
