@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Mind for free</title>
+</head>
+<body>
+  <header>Master Mind</header>
+    <div class="container">
+        <h2 id="Tries">Versuche: 0</h2>
+        <form onsubmit="guess(); return false">
+<input id="first" type="number" required placeholder="Bitte 1. Zahl tippen (max 10)">
+<input id="second"  type="number" required placeholder="Bitte 2. Zahl tippen (max 10)">
+<input id="third" type="number" required placeholder="Bitte 3. Zahl tippen (max 10)">
+<button type="button" onclick="guess(event)">Prüfen</button>
+<h2 id="New"></h2>
+        </form>
+
+    </div>
+    <script src = "script.js"></script>  
+</body>
+</html>

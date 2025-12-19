@@ -1,0 +1,62 @@
+let Number1 = Math.round(Math.random() * 10);
+let Number2 = Math.round(Math.random() * 10);
+let Number3 = Math.round(Math.random() * 10);
+let Versuche = 0;
+
+while (Number1 == Number2 || Number1 == Number3 || Number2 == Number3) {
+  Number1 = Math.round(Math.random() * 10);
+  Number2 = Math.round(Math.random() * 10);
+  Number3 = Math.round(Math.random() * 10);
+}
+
+function guess(event) {
+  if (event && event.preventDefault) event.preventDefault();
+
+  Versuche++;
+  const triesElement = document.getElementById("Tries");
+  const first = document.getElementById("first");
+  const second = document.getElementById("second");
+  const third = document.getElementById("third");
+  const New = document.getElementById("New");
+
+  triesElement.innerHTML = 'Versuche: ' + Versuche;
+
+  const v1 = Number(first.value);
+  const v2 = Number(second.value);
+  const v3 = Number(third.value);
+
+  // Erste Stelle
+  if (v1 === Number1) {
+    New.innerHTML += '🟢 ' + v1;
+  } else if (v1 === Number2 || v1 === Number3) {
+    New.innerHTML += '🟡 ' + v1;
+  } else {
+    New.innerHTML += '🔴 ' + v1;
+  }
+
+  // Zweite Stelle
+  if (v2 === Number2) {
+    New.innerHTML += '🟢 ' + v2;
+  } else if (v2 === Number1 || v2 === Number3) {
+    New.innerHTML += '🟡 ' + v2;
+  } else {
+    New.innerHTML += '🔴 ' + v2;
+  }
+
+  // Dritte Stelle
+  if (v3 === Number3) {
+    New.innerHTML += '🟢 ' + v3 + '<p>';
+  } else if (v3 === Number1 || v3 === Number2) {
+    New.innerHTML += '🟡 ' + v3 + '<p>';
+  } else {
+    New.innerHTML += '🔴 ' + v3 + '<p>';
+  }
+
+  if (v1 === Number1 && v2 === Number2 && v3 === Number3) {
+    New.innerHTML = 'Du hast gewonnen! 👍';
+  }
+
+  first.value = "";
+  second.value = "";
+  third.value = "";
+}
