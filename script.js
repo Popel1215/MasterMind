@@ -1,12 +1,14 @@
 let Number1 = Math.round(Math.random() * 10);
 let Number2 = Math.round(Math.random() * 10);
 let Number3 = Math.round(Math.random() * 10);
+let Number4 = Math.round(Math.random() * 10);
 let Versuche = 0;
 
-while (Number1 == Number2 || Number1 == Number3 || Number2 == Number3) {
+while (Number1 == Number2 || Number1 == Number3 || Number2 == Number3 || Number1 == Number4 || Number2 == Number4 || Number3 == Number4) {
   Number1 = Math.round(Math.random() * 10);
   Number2 = Math.round(Math.random() * 10);
   Number3 = Math.round(Math.random() * 10);
+  Number4 = Math.round(Math.random() * 10);
 }
 
 function guess(event) {
@@ -17,6 +19,7 @@ function guess(event) {
   const first = document.getElementById("first");
   const second = document.getElementById("second");
   const third = document.getElementById("third");
+  const fourth = document.getElementById("fourth");
   const New = document.getElementById("New");
 
   triesElement.innerHTML = 'Versuche: ' + Versuche;
@@ -45,18 +48,26 @@ function guess(event) {
 
   // Dritte Stelle
   if (v3 === Number3) {
-    New.innerHTML += '🟢 ' + v3 + '<p>';
+    New.innerHTML += '🟢 ' + v3 ;
   } else if (v3 === Number1 || v3 === Number2) {
-    New.innerHTML += '🟡 ' + v3 + '<p>';
+    New.innerHTML += '🟡 ' + v3 ;
   } else {
-    New.innerHTML += '🔴 ' + v3 + '<p>';
+    New.innerHTML += '🔴 ' + v3 ;
   }
-
-  if (v1 === Number1 && v2 === Number2 && v3 === Number3) {
+ // Vierte Stelle
+  if (v4 === Number4) {
+    New.innerHTML += '🟢 ' + v4 + '<p>';
+  } else if (v4 === Number1 || v4 === Number2 || v4 === Number3) {
+    New.innerHTML += '🟡 ' + v4 + '<p>';
+  } else {
+    New.innerHTML += '🔴 ' + v4 + '<p>';
+  }
+  if (v1 === Number1 && v2 === Number2 && v3 === Number3 && v4 === Number4) {
     New.innerHTML = 'Du hast gewonnen! 👍';
   }
 
   first.value = "";
   second.value = "";
   third.value = "";
+  fourth.value = "";
 }
