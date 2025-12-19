@@ -19,7 +19,7 @@ function guess(event) {
   const first = document.getElementById("first");
   const second = document.getElementById("second");
   const third = document.getElementById("third");
-  const fourth = document.getElementById("fourth");
+ const fourth = document.getElementById("fourth");
   const New = document.getElementById("New");
 
   triesElement.innerHTML = 'Versuche: ' + Versuche;
@@ -27,6 +27,7 @@ function guess(event) {
   const v1 = Number(first.value);
   const v2 = Number(second.value);
   const v3 = Number(third.value);
+  const v4 = Number(fourth.value);
 
   // Erste Stelle
   if (v1 === Number1) {
@@ -54,7 +55,7 @@ function guess(event) {
   } else {
     New.innerHTML += '🔴 ' + v3 ;
   }
- // Vierte Stelle
+ //Vierte Stelle
   if (v4 === Number4) {
     New.innerHTML += '🟢 ' + v4 + '<p>';
   } else if (v4 === Number1 || v4 === Number2 || v4 === Number3) {
