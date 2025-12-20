@@ -1,14 +1,14 @@
-let Number1 = Math.round(Math.random() * 10);
-let Number2 = Math.round(Math.random() * 10);
-let Number3 = Math.round(Math.random() * 10);
-let Number4 = Math.round(Math.random() * 10);
+let Number1 = Math.round(Math.random() * 9);
+let Number2 = Math.round(Math.random() * 9);
+let Number3 = Math.round(Math.random() * 9);
+let Number4 = Math.round(Math.random() * 9);
 let Versuche = 0;
 
 while (Number1 == Number2 || Number1 == Number3 || Number2 == Number3 || Number1 == Number4 || Number2 == Number4 || Number3 == Number4) {
-  Number1 = Math.round(Math.random() * 10);
-  Number2 = Math.round(Math.random() * 10);
-  Number3 = Math.round(Math.random() * 10);
-  Number4 = Math.round(Math.random() * 10);
+  Number1 = Math.round(Math.random() * 9);
+  Number2 = Math.round(Math.random() * 9);
+  Number3 = Math.round(Math.random() * 9);
+  Number4 = Math.round(Math.random() * 9);
 }
 
 function guess(event) {
@@ -71,4 +71,5 @@ function guess(event) {
   second.value = "";
   third.value = "";
   fourth.value = "";
+
 }
